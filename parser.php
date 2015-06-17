@@ -7,8 +7,8 @@
     $myType = $_REQUEST['myType'];
     $myAnnotation = $myType.' for '.$myEvent.' '.$myGender;
 
-    $objReader = PHPExcel_IOFactory::createReader('Excel2007');
-    $objPHPExcel = $objReader->load("./uploads/example1.xlsx");
+    $objReader = PHPExcel_IOFactory::createReader('Excel2005');
+    $objPHPExcel = $objReader->load("./uploads/team_pts.xls");
     $worksheet  = $objPHPExcel->setActiveSheetIndexbyName('Sheet1');
 
     if($myType=="Results"){
