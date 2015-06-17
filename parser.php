@@ -4,21 +4,25 @@
 
     $myGender = $_REQUEST['myGender'];
     $myEvent = $_REQUEST['myEvent'];
-    $myType = $_REQUEST['myType'];
-    $myAnnotation = $myType.' for '.$myEvent.' '.$myGender;
+    $myAnnotation = "Results after ".$myEvent." ".$myGender;
 
-    $objReader = PHPExcel_IOFactory::createReader('Excel2005');
-    $objPHPExcel = $objReader->load("./uploads/team_pts.xls");
-    $worksheet  = $objPHPExcel->setActiveSheetIndexbyName('Sheet1');
+    $inputFileName = './uploads/team_pts.xls';
 
-    if($myType=="Results"){
-        $endingCol = 43;
-        $infoCols = $endingCol-3;
-    }else{
-        $endingCol = 5;
-        $infoCols = $endingCol-2;
+    try {
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+    } catch(Exception $e) {
+        die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
     }
-    $startingRow  = 7;
+
+    //$objReader = PHPExcel_IOFactory::createReader('Excel2007');
+    //$objPHPExcel = $objReader->load("./uploads/example1.xlsx");
+    $worksheet  = $objPHPExcel->getSheet(0); 
+
+    $endingCol = 43;
+    $infoCols = $endingCol-3;
+    $startingRow  = 9;
     
     $highestRow         = $worksheet->getHighestRow()-2;
     $highestColumn      = $worksheet->getHighestColumn();
@@ -49,30 +53,11 @@
 
 <body>
 
-    <!-- Navigation -->
-    <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a>
-                            <?php
-                                echo $myAnnotation;
-                            ?>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>-->
-
-    <!-- Page Content -->
     <div class="container">
 
         <div class="row">
 
             <?php
-
                 echo '<table class="table table-striped"><tr>';
                 for ($row = $startingRow; $row <= $highestRow; ++ $row) {
                     if($row == $startingRow){
@@ -86,11 +71,7 @@
                             $val = $cell->getCalculatedValue();
                             $val = preg_replace('/\s+/', '', $val);
                             if($col==1){
-                                if($row>($startingRow+1)){
-                                    echo '<td><img src="flags/'. $val .'.jpg" class="flag"></td>';    
-                                }else{
-                                    echo'<td></td>';
-                                }
+                                echo '<td><img src="flags/'. $val .'.jpg" class="flag"></td>';    
                             }
                             echo '<td>' . $val .'</td>';
                         }
