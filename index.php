@@ -37,9 +37,8 @@
         <div class="row">
         	<div class="pages"  id="page1">
 	            <div class="col-lg-12 text-center">
-	               <h1>Choose the event you want to work with</h1>
-	               <p class="lead">Then click NEXT</p>
-	               <br><br><br>
+	               <h1>Results after:</h1>
+	               <br>
 					<form id="mainForm">
 						<table class="table borderless">
 							<tr>
@@ -48,7 +47,6 @@
 										<option value="Select">--SELECT--</option>
 										<option value="Men">Men</option>
 										<option value="Women">Women</option>
-										<option value="Team">Team</option>
 									</select>
 								</td>
 
@@ -57,51 +55,10 @@
 										<option value="Select" class="select">--SELECT--</option>
 									</select>
 								</td>
-
-								<td class="col-md-3">
-									<select class="form-control" id="typeSelect">
-										<option value="Start List">Start List</option>
-										<option value="Results">Results</option>
-									</select>
-								</td>
 							</tr>
 
 							<tr>
 								<td class="col-md-3">
-								</td>
-
-								<td class="col-md-3">
-								</td>
-
-								<td class="col-md-3">
-									<button type="submit" id="sbmtBttn" class="btn btn-default" style="float:right">NEXT</button>	
-								</td>
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
-
-			<div class="pages" id="page2">
-	            <div class="col-lg-12 text-center">
-	               <h1>Select the .XLS file you want to use</h1>
-	               <p class="lead">Then click DISPLAY RESULTS</p>
-	               <br><br><br>
-						<table class="table borderless">
-							<tr>
-								<form action="upload2.php" method="post" enctype="multipart/form-data">
-									<td class="col-md-2">
-										<input type="file" name="fileToUpload" class="filestyle" data-buttonName="btn-primary">
-									</td>
-									<td class = "col-md-2">
-											<input type="submit" class="btn btn-success" style="float:right;">
-									</td>
-								</form>
-							</tr>
-
-							<tr>
-								<td class="col-md-2">
-									<button id="prevBttn1" class="btn btn-default" style="float:left">PREV</button>	
 								</td>
 
 								<td class="col-md-2">
@@ -109,7 +66,9 @@
 								</td>
 							</tr>
 						</table>
+					</form>
 				</div>
+			</div>
 			</div>
         </div>
         <!-- /.row -->
