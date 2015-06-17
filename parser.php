@@ -60,11 +60,7 @@
             <?php
                 echo '<table class="table table-striped"><tr>';
                 for ($row = $startingRow; $row <= $highestRow; ++ $row) {
-                    if($row == $startingRow){
-                        echo '<tr style="font-weight:bold;">';
-                    }else{
-                        echo '<tr>';
-                    }
+                    echo '<tr>';
                     for ($col = 0; $col < $endingCol; ++ $col) {
                         if($col==0 || $col==1 || $col==42){
                             $cell = $worksheet->getCellByColumnAndRow($col, $row);
