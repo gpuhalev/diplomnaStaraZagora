@@ -4,7 +4,7 @@
 
     $myGender = $_REQUEST['myGender'];
     $myEvent = $_REQUEST['myEvent'];
-    $myAnnotation = "Results after ".$myEvent." ".$myGender;
+    $myAnnotation = $myEvent." ".$myGender;
 
     $inputFileName = './uploads/team_pts.xls';
 
@@ -46,7 +46,7 @@
     <title><?php echo $myAnnotation?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <link href="css/myStyleResults.css" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>   
 </head>
@@ -54,11 +54,26 @@
 <body>
 
     <div class="container">
-
-        <div class="row">
-
+        <div class="myHeader">
+            <table>
+                <tr>
+                    <th rowspan="2" width="35%">
+                        <img src="logo/ETC2LeagueStaraZagora15.png" width="100%" class="logo">
+                    </th>
+                    <td class="after">
+                        <a>Team ranking after:</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="myAnnotation">
+                        <a><?php echo $myAnnotation;?></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="myTable">
             <?php
-                echo '<table class="table table-striped"><tr>';
+                echo '<table class="resultsTable">';
                 for ($row = $startingRow; $row <= $highestRow; ++ $row) {
                     echo '<tr>';
                     for ($col = 0; $col < $endingCol; ++ $col) {
@@ -66,10 +81,15 @@
                             $cell = $worksheet->getCellByColumnAndRow($col, $row);
                             $val = $cell->getCalculatedValue();
                             $val = preg_replace('/\s+/', '', $val);
-                            if($col==1){
-                                echo '<td><img src="flags/'. $val .'.jpg" class="flag"></td>';    
+                            if($col==0){
+                                echo '<td class="rank">' . $val .'</td>';
                             }
-                            echo '<td>' . $val .'</td>';
+                            if($col==1){
+                                echo '<td class="flag"><img src="flags/'. $val .'.jpg" class="flag"></td><td class="country">' . $val .'</td>';
+                            }
+                            if($col==42){
+                                echo '<td class="points">' . $val .'</td>';
+                            }
                         }
                     }
                     echo '</tr>';
@@ -87,6 +107,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-filestyle.min.js"></script>
+    <script src="js/myScript.js"></script>
 
 </body>
 
