@@ -6,8 +6,8 @@
     $myEvent = $_REQUEST['myEvent'];
     $myAnnotation = $myEvent." ".$myGender;
 
-    //$inputFileName = './uploads/team_pts.xls';
-    $inputFileName = '../../../Dropbox/ETCH 2L results/team_pts.xls';
+    $inputFileName = './uploads/team_pts.xls';
+    //$inputFileName = '../../../Dropbox/ETCH 2L results/team_pts.xls';
 
     try {
         $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
@@ -86,10 +86,10 @@
                                 echo '<td class="rank"><a>' . $val .'</a></td>';
                             }
                             if($col==1){
-                                echo '<td class="flag"><img src="flags/'. $val .'.jpg" class="flag"></td><td class="country">' . $val .'</td>';
+                                echo '<td class="flag"><img src="flags/'. $val .'.jpg" class="flag"></td><td class="country"><a>' . $val .'</a></td>';
                             }
                             if($col==42){
-                                echo '<td class="points">' . $val .'</td>';
+                                echo '<td class="points"><a>' . $val .'</a></td>';
                             }
                         }
                     }
