@@ -6,7 +6,8 @@
     $myEvent = $_REQUEST['myEvent'];
     $myAnnotation = $myEvent." ".$myGender;
 
-    $inputFileName = './uploads/team_pts.xls';
+    //$inputFileName = './uploads/team_pts.xls';
+    $inputFileName = '../../../Dropbox/ETCH 2L results/team_pts.xls';
 
     try {
         $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
@@ -82,7 +83,7 @@
                             $val = $cell->getCalculatedValue();
                             $val = preg_replace('/\s+/', '', $val);
                             if($col==0){
-                                echo '<td class="rank">' . $val .'</td>';
+                                echo '<td class="rank"><a>' . $val .'</a></td>';
                             }
                             if($col==1){
                                 echo '<td class="flag"><img src="flags/'. $val .'.jpg" class="flag"></td><td class="country">' . $val .'</td>';

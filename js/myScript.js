@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	var menArray = ["100m", "200m", "400m", "800m", "1500m", "3000m", "5000m", "110m Hurdles", "400m Hurdles", "3000m SC", "4x400m", "4x100m", "High Jump", "Pole Vault", "Long Jump", "Triple Jump", "Shot Put", "Discus Throw", "Hammer Throw", "Javelin Throw"];
-	var womenArray = ["100m", "200m", "400m", "800m", "1500m", "3000m", "5000m", "100m Hurdles", "400m Hurdles", "3000m SC", "4x400m", "4x100m", "High Jump", "Pole Vault", "Long Jump", "Triple Jump", "Shot Put", "Discus Throw", "Hammer Throw", "Javelin Throw"];
+	var menArray = ["100m", "200m", "400m", "800m", "1500m", "3000m", "5000m", "110m H", "400m H", "3000m SC", "4x400m", "4x100m", "High Jump", "Pole Vault", "Long Jump", "Triple Jump", "Shot Put", "Discus Throw", "Hammer Throw", "Javelin Throw"];
+	var womenArray = ["100m", "200m", "400m", "800m", "1500m", "3000m", "5000m", "100m H", "400m H", "3000m SC", "4x400m", "4x100m", "High Jump", "Pole Vault", "Long Jump", "Triple Jump", "Shot Put", "Discus Throw", "Hammer Throw", "Javelin Throw"];
 
 	$( "#gendSelect" ).change(function() {
 		myGender = $( "#gendSelect option:selected" ).text();
