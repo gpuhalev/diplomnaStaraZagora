@@ -1,13 +1,19 @@
 <?php
+    session_start();
     require_once 'PHPExcel.php';
     require_once 'PHPExcel/IOFactory.php';
 
-    $myGender = $_REQUEST['myGender'];
-    $myEvent = $_REQUEST['myEvent'];
+    
+
+    $myGender = $_SESSION['myGender'];
+    $myEvent = $_SESSION['myEvent'];
+
+
+
     $myAnnotation = $myEvent." ".$myGender;
 
-    $inputFileName = './uploads/team_pts.xls';
-    //$inputFileName = '../../../Dropbox/ETCH 2L results/team_pts.xls';
+    //$inputFileName = './uploads/team_pts.xls';
+    $inputFileName = '../../../Dropbox/ETCH 2L results/team_pts.xls';
 
     try {
         $inputFileType = PHPExcel_IOFactory::identify($inputFileName);

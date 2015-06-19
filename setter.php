@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Index</title>
+    <title>Setter</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +30,8 @@
 
     <?php
     	session_start();
-    	$_SESSION['myGender'] = 'Men';
-    	$_SESSION['myEvent'] = '100m';
+		$_SESSION['myGender'] = $_REQUEST['myGender'];
+	    $_SESSION['myEvent'] = $_REQUEST['myEvent'];
         include "navigation.html";
     ?>
 
@@ -41,37 +41,7 @@
         <div class="row">
         	<div class="pages"  id="page1">
 	            <div class="col-lg-12 text-center">
-	               <h1>Results after:</h1>
-	               <br>
-					<form id="mainForm">
-						<table class="table borderless">
-							<tr>
-								<td class="col-md-3">
-									<select class="form-control" id="gendSelect">
-										<option value="Select">--SELECT--</option>
-										<option value="Men">Men</option>
-										<option value="Women">Women</option>
-									</select>
-								</td>
-
-								<td class="col-md-3">
-									<select class="form-control" id="eventSelect">
-										<option value="Select" class="select">--SELECT--</option>
-									</select>
-								</td>
-							</tr>
-
-							<tr>
-								<td class="col-md-3">
-									<button type="submit" id="sbmtBttn2" class="btn btn-default" style="float:left">DISPLAY GRAPHICS</button>
-								</td>
-
-								<td class="col-md-2">
-									<button type="submit" id="sbmtBttn3" class="btn btn-default" style="float:right">CHANGE RESULTS</button>
-								</td>
-							</tr>
-						</table>
-					</form>
+	               <h1>All set!</h1>
 				</div>
 			</div>
 			</div>

@@ -33,15 +33,20 @@ $(document).ready(function() {
 		});		
 	}
 
-
 	$("#sbmtBttn2").click(function(){
+		var linkAddress = './parser.php';
+		window.open(linkAddress, '_blank');
+	});
+
+
+	$("#sbmtBttn3").click(function(){
 		event.preventDefault();
 		if(myGender == "--SELECT--" || jQuery.type(myGender) === 'undefined'){
 			alert("Please, select men/women");
 		}else if(myEvent == "--SELECT--" || jQuery.type(myEvent) === 'undefined'){
 			alert("Please, select event");
 		}else{
-			var linkAddress = './parser.php?myGender=' + encodeURIComponent(myGender) 
+			var linkAddress = './setter.php?myGender=' + encodeURIComponent(myGender) 
 			+ '&myEvent=' + encodeURIComponent(myEvent);
 			window.open(linkAddress, '_blank');
 		}
