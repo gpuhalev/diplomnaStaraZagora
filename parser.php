@@ -68,7 +68,7 @@
                         <img src="logo/ETC2LeagueStaraZagora15.png" width="100%" class="logo">
                     </th>
                     <td class="after">
-                        <a>Team ranking after:</a>
+                        <a>(17/40) Team ranking after:</a>
                     </td>
                 </tr>
                 <tr>
