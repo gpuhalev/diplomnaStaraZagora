@@ -68,12 +68,12 @@
                         <img src="logo/ETC2LeagueStaraZagora15.png" width="100%" class="logo">
                     </th>
                     <td class="after">
-                        <a>Team ranking after:</a>
+                        <a></a>
                     </td>
                 </tr>
                 <tr>
                     <td class="myAnnotation">
-                        <a style="font-size:140%;">Day One</a>
+                        <a style="font-size:140%;">Final Results</a>
                     </td>
                 </tr>
             </table>
